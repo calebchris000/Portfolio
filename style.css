@@ -1,3 +1,7 @@
+* {
+    font-family: "poppins", sans-serif;
+}
+
 body {
     background-size: cover;
     padding: 20px 50px;
@@ -20,7 +24,6 @@ body {
 }
 
 .logo, .toggle {
-    font-family: "poppins", sans-serif;
     color: #fff; font-weight: 500;
 }
 
@@ -124,23 +127,18 @@ body {
     text-align: center;
 }
 
-
-
-.project-count, .companies-count {
-    font-size: 1.75em;
+.amount-projects, .amount-clients {
+    color:#fff;
     font-family: "poppins", sans-serif;
-    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.completed-projects {
     color: #fff;
+    font-family: "poppins", sans-serif;
+
 }
 
-.sum-projects h1 {
-    font-family: "poppins", sans-serif;
-    font-weight: 700;
-    color: #D6FF00;
-    font-size: 3rem;
-    position: relative;
-    bottom: 40px;
-}
 
 .title {
     color: #fff;
