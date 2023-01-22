@@ -6,12 +6,7 @@ body {
     background-size: cover;
     padding: 20px 50px;
     background-image: url(./Graphics/background.png);
-
-   
 }
-
-
-
 
 .nav-bar {
     display: flex;
@@ -47,7 +42,7 @@ body {
 }
 
 .underline-quick-info {
-    color: grey;
+    color: #808080;
     position: relative;
     top: 30px;
     font-family: sans-serif;
@@ -59,12 +54,11 @@ body {
 }
 
 .underline-quick-info:hover {
-    color: #fff
+    color: #D6FF00
 }
 
 .quick-info {
     color: #fff;
-    font-family: "poppins", sans-serif;
     font-size: 2rem;
     font-weight: 600;
 }
@@ -80,7 +74,6 @@ body {
     width: fit-content;
     padding: 10px;
     border-radius: 18px;
-    font-family: "poppins", sans-serif;
     font-weight: 600;
     font-size: 1rem;
     user-select: none;
@@ -129,19 +122,118 @@ body {
 
 .amount-projects, .amount-clients {
     color:#fff;
-    font-family: "poppins", sans-serif;
     font-size: 2.5rem;
 }
 
 .completed-projects {
     color: #fff;
-    font-family: "poppins", sans-serif;
+    position: relative;
+    bottom: 30px;
+}
 
+.satisfied-clients {
+    color: #fff;
+    position: relative;
+    bottom: 30px;
+}
+
+.title {
+    color: #808080;
+    font-family: sans-serif;
+    font-weight: 300;
+    margin-top: 100px;
+    text-decoration: underline;
+    transition: all 0.5s ease;
+    user-select: none;
+}
+
+.title:hover {
+    color: #D6FF00;
+}
+
+.project-list {
+    width: 100%;
+}
+
+.project-list li {
+    border: 2px solid none;
+    border-radius: 20px;
+    list-style-type: none;
+    height: 260px;
+    margin-bottom: 16px;
+    position: relative;
+    right: 2.7rem;
+    overflow: hidden;
+}
+
+.one {
+    background-image: url(./Graphics/one.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.two {
+    background-image: url(./Graphics/two.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.three {
+    background-image: url(./Graphics/three.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.four {
+    background-image: url(./Graphics/four.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.five {
+    background-image: url(./Graphics/five.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.six {
+    background-image: url(./Graphics/six.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
 
-.title {
+
+.project-list div {
+    border: 2px solid #000;
+    background-color: #000;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
     color: #fff;
-    margin-top: 100px;
-    font-family: "poppins", sans-serif;
+    transition: all 1s ease;
+    display: none;
+}
+
+.one:hover div,
+.two:hover div,
+.three:hover div,
+.four:hover div,
+.five:hover div,
+.six:hover div {
+    transition: all 1s ease;
+    display: block;
 }
