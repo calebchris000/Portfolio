@@ -6,6 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <title>Caleb Nwaizu Portfolio</title>
 </head>
 
@@ -48,16 +56,151 @@
         <h5 class="title">HIGHLIGHTED PROJECTS</h5>
 
         <ul class="project-list">
-            <li class="one"><div></div></li>
-            <li class="two"><div></div></li>
-            <li class="three"><div></div></li>
-            <li class="four"><div></div></li>
-            <li class="five"><div></div></li>
-            <li class="six"><div></div></li>
+            <li class="one">
+                <div>
+                    <p>Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.
+                        Maxime reprehenderit emet pitu
+                        commor
+                    </p>
+                </div>
+            </li>
+            <li class="two">
+                <div>
+                    <p>Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.
+                        Maxime reprehenderit emet pitu
+                        commor
+                    </p>
+                </div>
+            </li>
+            <li class="three">
+                <div>
+                    <p>Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.
+                        Maxime reprehenderit emet pitu
+                        commor
+                    </p>
+                </div>
+            </li>
+            <li class="four">
+                <div>
+                    <p>Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.
+                        Maxime reprehenderit emet pitu
+                        commor
+                    </p>
+                </div>
+            </li>
+            <li class="five">
+                <div>
+                    <p>Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit.
+                        Maxime reprehenderit emet pitu
+                        commor
+                    </p>
+                </div>
+            </li>
+            <li class="six">
+                <div></div>
+            </li>
         </ul>
     </section>
 
     <section class="review">
+        <h5 class="review-info">REVIEWS</h5>
+
+        <div class="sophia-container">
+            <p class="name">Sophia J. Williams</p>
+            <p class="review-content">"Caleb did an amazing job on my website.
+                I couldn't be happier with the final product.
+                He was able to take my vision and turn it into a
+                reality. He was professional, responsive, and made
+                sure to include all of the features that were important
+                to me. I would highly recommend him to anyone in need
+                of a new website. Thank you, Caleb, for a job well done!"</p>
+
+        </div>
+
+        <div class="juan-container">
+            <p class="name">Juan P. Rodriguez</p>
+            <p class="review-content">I had the pleasure of working with Caleb
+                on a website building project, and I have to say, he did an excellent
+                job. From the beginning, he was professional, knowledgeable and easy
+                to work with. He was able to take my vision for the website and turn
+                it into a reality. Caleb's technical skills were top-notch and he was
+                able to handle everything from the design to the development of the
+                website with ease. I highly recommend him for any website development project.
+            </p>
+
+        </div>
+
+        <div class="juan-container">
+            <p class="name">Emily J. Smith</p>
+            <p class="review-content">"Caleb is a website development wizard! He was able to
+                bring my website to life in a way that I could have never imagined.
+                Not only is he incredibly talented, but he is also a pleasure to work with.
+                He was patient, responsive and very easy to communicate with. He understood my
+                needs and was able to provide solutions that exceeded my expectations. I would
+                highly recommend Caleb to anyone looking for a professional, high-quality website.
+                Thank you, Caleb, for your amazing work!"</p>
+
+        </div>
+
+        <div class="see-more-review">SEE MORE REVIEWS</div>
+    </section>
+
+    <section class="social-media">
+        <h2>KEEP IN TOUCH</h2>
+
+        <ul class="all-socials">
+            <li class="github">
+                <img src="./Graphics/Github.png" alt="">
+                <p><a href="https://github.com/calebchris000">GITHUB</a></p>
+                <img class="hyperlink" src="./Graphics/hyperlink.svg" alt="">
+            </li>
+
+            <li class="linkedin">
+                <img src="./Graphics/LinkedIn.png" alt="">
+                <p><a href="https://www.linkedin.com/in/caleb-nwaizu-b815aa23b/">LINKEDIN</a></p>
+                <img class="hyperlink" src="./Graphics/hyperlink.svg" alt="">
+            </li>
+
+            <li class="gmail">
+                <img src="./Graphics/Gmail.png" alt="">
+                <p><a href="mailto:calebchris000@gmail.com">GMAIL</a></p>
+                <img class="hyperlink" src="./Graphics/hyperlink.svg" alt="">
+            </li>
+
+            <li class="whatsapp">
+                <img src="./Graphics/WhatsApp.png" alt="">
+                <p><a href="https://api.whatsapp.com/send?phone=+2347039820933">WHATSAPP</a></p>
+                <img class="hyperlink" src="./Graphics/hyperlink.svg" alt="">
+
+            </li>
+        </ul>
+    </section>
+    <section class="contact-message">
+        <div class="contact-body">
+            <p>Contact Me</p>
+            <form action="https://formspree.io/f/moqzvbgl" method="post">
+                <div class="fist-and-last">
+                    <label for="first-name"></label>
+                    <input type="text" id="first-name" placeholder="First Name" required>
+                    <label for="last-name"></label>
+                    <input type="text" id="last-name" placeholder="Last Name" required>
+                </div>
+
+                <label for="email"></label>
+                <input type="email" name="mail" id="email" placeholder="user@mail.com" required>
+
+                <label for="message"></label>
+                <textarea name="message" id="message" required></textarea>
+                <label for="submit"></label>
+                <button class="submit" id="submit">Get In Touch</button>
+            </form>
+        </div>
+
     </section>
 </body>
 
