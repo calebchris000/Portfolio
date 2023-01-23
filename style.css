@@ -6,20 +6,24 @@ body {
     background-size: cover;
     padding: 20px 50px;
     background-image: url(./Graphics/background.png);
+    background-repeat: repeat-y;
 }
 
 .nav-bar {
     display: flex;
     justify-content: space-between;
-    
+
 }
 
-.quick-navigation, .contact-me {
+.quick-navigation,
+.contact-me {
     display: none;
 }
 
-.logo, .toggle {
-    color: #fff; font-weight: 500;
+.logo,
+.toggle {
+    color: #fff;
+    font-weight: 500;
 }
 
 .logo {
@@ -54,7 +58,7 @@ body {
 }
 
 .underline-quick-info:hover {
-    color: #D6FF00
+    color: #D6FF00;
 }
 
 .quick-info {
@@ -68,7 +72,8 @@ body {
     justify-content: space-between;
 }
 
-.contact-me-mobile, .see-projects-mobile {
+.contact-me-mobile,
+.see-projects-mobile {
     border: 3px solid #D6FF00;
     color: #D6FF00;
     width: fit-content;
@@ -82,10 +87,10 @@ body {
 
 
 .see-projects-mobile {
-  margin-right: 0px;
-  border-color: #fff;
-  color: #fff;
-  margin-right: 20px;
+    margin-right: 0px;
+    border-color: #fff;
+    color: #fff;
+    margin-right: 20px;
 }
 
 .arrow-top-right {
@@ -120,21 +125,22 @@ body {
     text-align: center;
 }
 
-.amount-projects, .amount-clients {
-    color:#fff;
-    font-size: 2.5rem;
+.amount-projects,
+.amount-clients {
+    color: #fff;
+    font-size: 3rem;
 }
 
 .completed-projects {
     color: #fff;
     position: relative;
-    bottom: 30px;
+    bottom: 36px;
 }
 
 .satisfied-clients {
     color: #fff;
     position: relative;
-    bottom: 30px;
+    bottom: 36px;
 }
 
 .title {
@@ -217,16 +223,25 @@ body {
 
 
 .project-list div {
-    border: 2px solid #000;
-    background-color: #000;
+    background-color: rgba(255, 255, 255, 0.7);
     width: 100%;
-    height: 40px;
+    height: 70px;
     position: absolute;
     bottom: 0;
-    color: #fff;
-    transition: all 1s ease;
-    display: none;
+    color: #000;
+    transition: all 0.5s ease;
+    text-align: center;
+    opacity: 0;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 20px;
 }
+
+.project-list div p {
+    font-size: 0.8rem;
+    width: 80%;
+}
+
 
 .one:hover div,
 .two:hover div,
@@ -234,6 +249,202 @@ body {
 .four:hover div,
 .five:hover div,
 .six:hover div {
-    transition: all 1s ease;
+    opacity: 1;
+}
+
+.review {
+    margin-top: 100px;
+}
+
+
+.review-info {
+    color: #808080;
+    position: relative;
+    top: 30px;
+    font-family: sans-serif;
+    font-weight: 300;
+    text-decoration-line: underline;
+    transition: all 0.5s ease;
+    user-select: none;
+    width: fit-content;
+}
+
+.review-info:hover {
+    color: #D6FF00;
+}
+
+.sophia-container,
+.juan-container {
+    position: relative;
+    top: 30px;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+
+.name {
+    color: #000;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.review-content {
+    color: #000;
+    font-weight: 500;
+    font-family: "Open Sans", sans-serif;
+}
+
+.see-more-review {
+    position: relative;
+    top: 20px;
+    left: 10px;
+    user-select: none;
+    transition: all 0.5s ease;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.see-more-review:hover {
+    color: #D6FF00;
+
+}
+
+.social-media {
+    position: relative;
+    top: 70px;
+}
+
+.social-media h2 {
+    color: #fff
+}
+
+.all-socials {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 38px;
+}
+
+.all-socials li {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    width: fit-content;
+}
+
+.all-socials p {
+    margin-left: 30px;
+    position: relative;
+    top: 1px;
+
+}
+
+.all-socials a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.all-socials img {
+    width: 30px;
+}
+
+.github .hyperlink,
+.linkedin .hyperlink,
+.gmail .hyperlink,
+.whatsapp .hyperlink {
+    width: 15px;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.github:hover .hyperlink,
+.linkedin:hover .hyperlink,
+.gmail:hover .hyperlink,
+.whatsapp:hover .hyperlink {
+    opacity: 1;
+}
+
+.contact-message {
+    position: relative;
+    top: 350px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.contact-message p {
+    color: #fff;
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.contact-body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.first-and-last {
+    display: flex;
+}
+
+#first-name,
+#last-name,
+#email {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 5px;
+}
+
+#first-name::placeholder,
+#last-name::placeholder,
+#email::placeholder {
+    color: #fff;
+    font-family: "poppins";
+    font-weight: 600;
+}
+
+#message {
+    height: 240px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 5px;
+}
+
+.submit {
+    border: 3px solid #D6FF00;
+    color: #D6FF00;
+    padding: 12px 24px;
+    border-radius: 18px;
+    font-weight: 600;
+    font-size: 1rem;
     display: block;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 10px;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.submit:hover {
+    background-color: #D6FF00;
+    color: #000;
+}
+
+.submit:active {
+    transition: none;
+    background-color: #96b10d;
+    border-color: #96b10d;
 }
