@@ -11,11 +11,7 @@ I am excited to share my journey and growth as a developer with you through this
 
 # Technologies used
 
-    -HTML/CSS
-    -JavaScript
-    -React
-    -Node.js
-    -MongoDB
+    - HTML/CSS
 
 # Features
 
@@ -34,6 +30,6 @@ I am excited to share my journey and growth as a developer with you through this
 
 # Contact
 
-If you have any questions or feedback, please feel free to reach out to me through the contact form on the website or by email at [My Google Mail](calebchris000@gmail.com).
+**If you have any questions or feedback, please feel free to reach out to me through the contact form on the website or by email at [My Google Mail](calebchris000@gmail.com).**
 
 Thank you for visiting my portfolio website!
