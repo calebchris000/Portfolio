@@ -3,7 +3,7 @@
 
 # Description
 
-Hello fellow esteemed visitors! My name is Caleb Chigozie Nwaizu and this is my official portfolio repository I am currently in the process of developing and designing this site to showcase my skills, projects and experiences.
+Hello fellow esteemed visitors! My name is Caleb Chigozie Nwaizu and this is my official portfolio repository. I am currently in the process of developing and designing this site to showcase my skills, projects and experiences.
 
 This portfolio will include information about my background, education, and work experience, as well as a selection of my personal projects. Visitors will be able to view my projects and read about the technologies and approaches I used to build them.
 
