@@ -16,6 +16,7 @@ body {
 .nav-bar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
 }
 
@@ -47,12 +48,12 @@ body {
 }
 
 .introduction {
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
 .quick-info {
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
@@ -63,12 +64,12 @@ body {
 
 .contact-me-mobile,
 .see-projects-mobile {
-    border: 3px solid #D6FF00;
+    border: 2px solid #D6FF00;
     color: #D6FF00;
     background-color: rgba(0, 0, 0, 0);
     width: fit-content;
-    padding: 14px;
-    border-radius: 18px;
+    padding: 8px 10px;
+    border-radius: 10px;
     font-weight: 600;
     font-size: 1rem;
     user-select: none;
@@ -125,7 +126,8 @@ body {
     margin-top: 100px;
 }
 
-.sum-projects {
+.sum-projects,
+.clients {
     text-align: center;
 }
 
@@ -147,15 +149,14 @@ body {
     bottom: 36px;
 }
 
+
 .title {
     color: #fff;
-    font-family: sans-serif;
     font-weight: 600;
-    margin-top: 100px;
-    transition: all 0.5s ease;
     user-select: none;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
+
 
 .title:hover {
     color: #fff;
@@ -163,6 +164,8 @@ body {
 
 .project-list {
     width: 100%;
+    position: relative;
+    top:-10px
 }
 
 .project-list li {
@@ -235,14 +238,6 @@ body {
     margin-bottom: 10px;
 }
 
-.languages p {
-    color: #fff;
-}
-
-.languages .info {
-    margin-top: 50px;
-
-}
 
 .strengths {
     position: relative;
@@ -258,16 +253,6 @@ body {
     align-items: center;
 }
 
-.languages li p {
-    font-weight: 600;
-}
-
-
-.languages img {
-    height: 30px;
-    margin-right: 20px;
-
-}
 
 
 .project-list div {
@@ -306,18 +291,30 @@ body {
     margin-top: 100px;
 }
 
-
-.review-info {
+.languages li p {
+    font-weight: 600;
     color: #fff;
-    position: relative;
-    top: 30px;
-    font-family: sans-serif;
+}
+
+
+.languages img {
+    height: 30px;
+    margin-right: 20px;
+}
+
+
+.my-expertise {
+    color: #fff;
     font-weight: 600;
     transition: all 0.5s ease;
     user-select: none;
     width: fit-content;
-    font-size: 1.5rem;
-    margin: auto;
+    font-size: 1.1rem;
+}
+
+
+.info {
+    color: #fff;
 }
 
 
@@ -334,21 +331,26 @@ body {
 }
 
 .social-media {
-    margin-top: 300px;
+    margin-top: 200px;    
 }
+
+
 
 .social-media h2 {
     color: #fff;
     font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.social-media .description {
+    color: #fff;
 }
 
 .all-socials {
     list-style-type: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    position: relative;
-    right: 38px;
-    grid-column-gap: 20%;
+   
 }
 
 .all-socials li {
@@ -401,7 +403,7 @@ body {
 }
 
 .credit .footer-line {
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
     width: 100%;
 }
 
@@ -410,4 +412,106 @@ body {
     font-family: var(--font-family);
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.4);
+}
+
+/* Keyframes for screen less than 320px */
+
+@media screen and (min-width:768px) {
+
+    .toggle {
+        display: none;
+    }
+
+    .quick-navigation {
+        display: flex;
+        list-style-type: none;
+        position: relative;
+        right: 20px;
+    }
+
+    .quick-navigation li a {
+        margin-left: 3rem;
+        color: #fff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        user-select: none;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+
+
+    .quick-navigation li:hover {
+        color: #D6FF00
+    }
+    
+    .quick-overview {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    .project-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .a-topic {
+        justify-content:center;
+    }
+
+    .title {
+        margin-left: 15px;
+    }
+
+    .project-list li {
+    border: 2px solid none;
+    border-radius: 10px;
+    height: 260px;
+    margin-bottom: 16px;
+    margin-left: 16px;
+    overflow: hidden;
+    }
+
+    .wrapper-for-desktop {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .languages {
+        width: 400px;
+        margin: 0px;
+    }
+
+
+    .social-media {
+        margin-top: 65px;
+        width:400px;
+        margin-left: 30px;
+    }
+
+    .all-socials {
+        margin-left: -40px;
+    }
+
+    .introduction .buttons {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .see-projects-mobile {
+        margin-left: 60px;
+    }
+
+    
+}
+
+@media screen and (min-width:1280px) {
+    .project-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
 }
