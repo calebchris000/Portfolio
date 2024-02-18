@@ -1,0 +1,62 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+.nav * {
+  transition: all 0.2s ease;
+}
+.left,
+.right {
+  flex: 1;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.name {
+  font-family: "Poppins", sans-serif;
+}
+
+.profile {
+  border-radius: 50%;
+}
+
+.right {
+  /* flex: 2; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actions {
+  display: flex;
+  padding: 0 2rem;
+  list-style-type: none;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.action {
+  padding: 0.3rem 1.5rem;
+  margin: 0.5rem 0;
+  transition: all 0.2s ease;
+  border-radius: 1.8rem;
+}
+
+.action:hover {
+  background-color: black;
+}
+
+.action:hover a {
+  color: white;
+
+}
+
+.action a {
+  text-decoration: none;
+  color: black;
+  /* font-weight: 500; */
+}
