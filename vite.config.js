@@ -5,9 +5,15 @@ import { sveltePreprocess } from "svelte-preprocess/dist/autoProcess";
 import tailwindcss from "tailwindcss";
 import postcss from "postcss";
 import autoprefixer from "autoprefixer";
+import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, "src"),
+    },
+  },
   plugins: [
     svelte({
       preprocess: sveltePreprocess({

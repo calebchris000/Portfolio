@@ -1,0 +1,20 @@
+.container {
+  &:hover .icon_holder {
+    display: block;
+    svg {
+    transition: all 0.3s ease;
+    }
+  }
+  .icon_holder {
+    transition: all 0.3s ease;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,24 @@
+.container {
+  // background-color: blue;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+
+  .sub_container {
+    align-self: flex-end;
+    display: grid;
+    height: calc(100% - 10rem);
+    // flex-direction: column;
+
+    .left {
+
+      .title {
+        // font-size: 10rem;
+      }
+    }
+    // grid-template-columns: 1fr;
+
+    .right {
+      // grid-row: span 5;
+    }
+  }
+}
