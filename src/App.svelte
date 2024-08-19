@@ -4,10 +4,7 @@
     import Counter from "./lib/Counter.svelte";
 </script>
 
-<main>
-    <a href="link.com">this is a link</a>
-    <input type="text" />
-</main>
+<main></main>
 
 <style>
 </style>

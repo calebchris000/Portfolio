@@ -73,6 +73,26 @@
     transform: translate(-50%, -50%);
 }
 
+.tooltip {
+    pointer-events: none;
+    opacity: 0;
+    color: white;
+    transition: all 100ms ease;
+    position: fixed;
+    font-family: "Indie Flower", cursive;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-wrap: nowrap;
+    z-index: 5;
+}
+
+.tooltip svg {
+    /* stroke: red; */
+    transform: translateY(-1rem) translateX(-2rem);
+}
 @keyframes rotate {
     0% {
         transform: translate(-50%, -50%) rotate(0deg);
