@@ -1,0 +1,83 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    cursor: none;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    background: var(--primary-color);
+    height: 100vh;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --primary-color: #0d0c1d;
+    --accent-color-1: #161b33;
+    --accent-color-2: #474973;
+    --accent-color-3: #a69cac;
+    --secondary-color: #f1dac4;
+}
+
+:root * {
+    cursor: none;
+}
+.cursor {
+    width: 1rem;
+    pointer-events: none;
+    height: 1rem;
+    position: fixed;
+    border: 3px solid;
+    border-color: white !important;
+    z-index: 2;
+    border-radius: 50%;
+    /* transition: all 30ms linear; */
+}
+
+.blob_parent {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.blob {
+    width: 26rem;
+    height: 34rem;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to right, red, orange);
+    animation: rotate 10s linear infinite;
+    transition: all 0.5s ease;
+}
+
+.blob_blur {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+    transition: all 0.5s ease;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
