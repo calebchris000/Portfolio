@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import download from "@src/assets/download.svg";
 
     let home: HTMLElement;
 
@@ -18,20 +19,63 @@
         </div>
         <div class="nav_links">
             <span><a href="#home">Home</a></span>
-            <span><a href="#about">About</a></span>
+            <span><a href="#about">About Me</a></span>
             <span><a href="#projects">Projects</a></span>
-            <span><a href="#contact">Contact</a></span>
         </div>
     </nav>
     <section class="content">
         <div class="text">
-            <span>Hey, I'm CALEB NWAIZU</span>
+            <span class="greet">Hey, I'm CALEB NWAIZU</span>
             <span
                 >A professional Frontend and Backend Web Developer with 2+ years
                 of experience. From simple websites to functional and
                 sophisticated system.</span
             >
-            <button class="button" type="button">See My Works!</button>
+            <div style="display: flex; gap: 1rem;">
+                <button
+                    style="display: flex; align-items: center;gap: 2rem;"
+                    class="button"
+                    type="button"
+                >
+                    <span>See My Works!</span>
+                    <i class="fa-solid fa-folder"></i>
+                </button>
+                <button
+                    style="display: flex; align-items: center;gap: 2rem;"
+                    class="button"
+                    type="button"
+                >
+                    <figure>Download My Resume</figure>
+                    <i class="fa-solid fa-download"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="shortcuts">
+            <div>
+                <span style="font-weight: bold; color: var(--accent-color);"
+                    >W</span
+                >
+                <span style="text-wrap: nowrap;">My Works</span>
+            </div>
+            <div>
+                <span style="font-weight: bold; color: var(--accent-color);"
+                    >T</span
+                >
+                <span style="text-wrap: nowrap;">Toggle Theme</span>
+            </div>
+            <div>
+                <span style="font-weight: bold; color: var(--accent-color);"
+                    >H</span
+                >
+                <span style="text-wrap: nowrap;">Home</span>
+            </div>
+            <div>
+                <span style="font-weight: bold; color: var(--accent-color);"
+                    >R</span
+                >
+                <span style="text-wrap: nowrap;">Download Resume</span>
+            </div>
         </div>
     </section>
 </main>
@@ -39,6 +83,7 @@
 <style>
     .home {
         position: relative;
+        user-select: none;
         z-index: 10;
         transform: scale(0);
         transition: all 500ms cubic-bezier(1, 1.72, 0.78, 0.79);
@@ -61,8 +106,40 @@
     .content {
         margin-top: 3.7vh;
         color: var(--secondary-color);
-        width: 129.63vh;
+        display: flex;
+        justify-content: space-between;
+        gap: 40vh;
+        padding: 0 7.41vh;
+
         font-family: "Poppins", sans-serif;
+    }
+
+    .shortcuts {
+        display: flex;
+        flex-direction: column;
+        border: 0.1vh solid var(--accent-color-2);
+        height: fit-content;
+        background-color: var(--accent-color-1);
+        opacity: 0.5;
+        transition: all 300ms ease;
+        user-select: none;
+    }
+
+    .shortcuts:hover {
+        opacity: 1;
+    }
+
+    .shortcuts div {
+        display: flex;
+        font-size: 2vh;
+        font-weight: 500;
+        border-bottom: 0.1vh solid var(--accent-color-2);
+        gap: 2vh;
+        padding: 2.5vh;
+    }
+
+    .shortcuts div:last-child {
+        border: none;
     }
 
     .nav_links {
@@ -79,13 +156,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 0 auto;
-        padding: 0 7.41vh;
         align-items: flex-start;
         text-align: start;
     }
 
-    .text span:first-child {
+    .greet {
         font-size: 12.26vh;
         font-weight: 600;
         font-family: "Manrope", "Poppins", sans-serif;
@@ -149,6 +224,11 @@
         to {
             width: 100%;
         }
+    }
+
+    .text button:last-child {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
     }
 
     .identity {
