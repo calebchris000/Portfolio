@@ -6,6 +6,23 @@
     let home: HTMLElement;
     $: show_tip = false;
 
+    function handleDownloadResume() {
+        const link = document.createElement("a");
+        link.href = "./src/lib/resume.pdf";
+        link.download = "Resume - Caleb Nwaizu.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function handleKeyPress(e: KeyboardEvent) {
+        e.preventDefault();
+        const { key } = e;
+        if (key.toUpperCase() === "R") {
+            handleDownloadResume();
+        }
+    }
+
     onMount(() => {
         setTimeout(() => {
             home.style.transform = "scale(1)";
@@ -25,6 +42,8 @@
             localStorage.setItem("showTip", JSON.stringify(true));
         }, 10000);
     });
+
+    window.addEventListener("keypress", handleKeyPress);
 </script>
 
 <main bind:this={home} class="home">
@@ -57,6 +76,7 @@
                     <i class="fa-solid fa-folder"></i>
                 </button>
                 <button
+                    on:click={handleDownloadResume}
                     style="display: flex; align-items: center;gap: 2rem;"
                     class="button"
                     type="button"
@@ -71,22 +91,23 @@
             <div class="shortcuts">
                 <div>
                     <span style="font-weight: bold; color: var(--accent-color);"
-                        >W</span
-                    >
-                    <span style="text-wrap: nowrap;">My Works</span>
-                </div>
-                <div>
-                    <span style="font-weight: bold; color: var(--accent-color);"
-                        >T</span
-                    >
-                    <span style="text-wrap: nowrap;">Toggle Theme</span>
-                </div>
-                <div>
-                    <span style="font-weight: bold; color: var(--accent-color);"
                         >H</span
                     >
                     <span style="text-wrap: nowrap;">Home</span>
                 </div>
+                <div>
+                    <span style="font-weight: bold; color: var(--accent-color);"
+                        >M</span
+                    >
+                    <span style="text-wrap: nowrap;">About Me</span>
+                </div>
+                <div>
+                    <span style="font-weight: bold; color: var(--accent-color);"
+                        >W</span
+                    >
+                    <span style="text-wrap: nowrap;">My Works</span>
+                </div>
+
                 <div>
                     <span style="font-weight: bold; color: var(--accent-color);"
                         >R</span
