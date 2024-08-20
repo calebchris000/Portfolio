@@ -28,6 +28,21 @@ window.addEventListener("mousemove", (e) => {
   }, 200);
 });
 
+window.addEventListener("mouseout", () => {
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+
+  const event = new MouseEvent("mousemove", {
+    clientX: centerX,
+    clientY: centerY,
+    bubbles: true,
+    cancelable: true,
+    view: window,
+  });
+
+  window.dispatchEvent(event);
+});
+
 window.addEventListener("mousedown", (e) => {
   const randomGradients = [
     "linear-gradient(to right, red, orange)",

@@ -39,10 +39,11 @@ window.addEventListener("mousemove", (e) => {
       tooltip.style.pointerEvents = "auto";
       tooltip.style.opacity = "1";
     }, 2000);
-    setTimeout(() => {
-      localStorage.setItem("tooltip_shown", JSON.stringify(true));
-      tooltip.style.opacity = "0";
-      tooltip.style.pointerEvents = "none";
-    }, 6000);
   }
+});
+
+window.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+  tooltip.classList.add("tooltip_hide");
+  localStorage.setItem("tooltip_shown", JSON.stringify(true));
 });

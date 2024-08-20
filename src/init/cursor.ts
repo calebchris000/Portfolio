@@ -23,20 +23,28 @@ window.addEventListener("mousemove", (e) => {
 
   if (!target) return;
 
-  if (target.tagName === "A" || target.tagName === "BUTTON") {
-    cursor.style.borderColor = "#4a61f5";
+  if (target.tagName === "A") {
+    cursor.style.borderColor = "yellow";
+    cursor.style.background = "yellow";
+    cursor.style.scale = "1.2";
+  } else if (target.tagName === "BUTTON") {
+    cursor.style.borderColor = "#ff4500";
+    cursor.style.background = "#ff4500";
     cursor.style.scale = "1.2";
   } else if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") {
     cursor.style.borderColor = "#28a745";
+    cursor.style.background = "#28a745";
     cursor.style.scale = "1.2";
   } else if (target.tagName === "SELECT") {
     cursor.style.borderColor = "#ffc107";
+    cursor.style.background = "#ffc107";
     cursor.style.scale = "1.2";
   } else if (target.classList.contains("interactive")) {
     cursor.style.borderColor = "#dc3545";
     cursor.style.scale = "1.2";
   } else {
-    cursor.style.borderColor = "initial";
+    cursor.style.borderColor = "#f1dac4";
+    cursor.style.background = "initial";
     cursor.style.scale = "1";
   }
 
@@ -47,6 +55,5 @@ window.addEventListener("mousemove", (e) => {
 
 document.addEventListener("contextmenu", (e) => {
   e.preventDefault();
-  cursor.style.background =
-    cursor.style.background === "white" ? "none" : "white";
+  cursor.classList.toggle("cursor_highlight");
 });
