@@ -1,13 +1,29 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import download from "@src/assets/download.svg";
+    import animated from "@src/assets/animated_arrow.gif";
 
     let home: HTMLElement;
+    $: show_tip = false;
 
     onMount(() => {
         setTimeout(() => {
             home.style.transform = "scale(1)";
         });
+
+        const tip = localStorage.getItem("showTip");
+
+        if (!tip) {
+            localStorage.setItem("showTip", JSON.stringify(false));
+        } else {
+            const parsed = JSON.parse(tip);
+            show_tip = parsed;
+        }
+
+        setTimeout(() => {
+            show_tip = true;
+            localStorage.setItem("showTip", JSON.stringify(true));
+        }, 10000);
     });
 </script>
 
@@ -51,31 +67,46 @@
             </div>
         </div>
 
-        <div class="shortcuts">
-            <div>
-                <span style="font-weight: bold; color: var(--accent-color);"
-                    >W</span
-                >
-                <span style="text-wrap: nowrap;">My Works</span>
+        <div style="position: relative;">
+            <div class="shortcuts">
+                <div>
+                    <span style="font-weight: bold; color: var(--accent-color);"
+                        >W</span
+                    >
+                    <span style="text-wrap: nowrap;">My Works</span>
+                </div>
+                <div>
+                    <span style="font-weight: bold; color: var(--accent-color);"
+                        >T</span
+                    >
+                    <span style="text-wrap: nowrap;">Toggle Theme</span>
+                </div>
+                <div>
+                    <span style="font-weight: bold; color: var(--accent-color);"
+                        >H</span
+                    >
+                    <span style="text-wrap: nowrap;">Home</span>
+                </div>
+                <div>
+                    <span style="font-weight: bold; color: var(--accent-color);"
+                        >R</span
+                    >
+                    <span style="text-wrap: nowrap;">Download Resume</span>
+                </div>
             </div>
-            <div>
-                <span style="font-weight: bold; color: var(--accent-color);"
-                    >T</span
-                >
-                <span style="text-wrap: nowrap;">Toggle Theme</span>
-            </div>
-            <div>
-                <span style="font-weight: bold; color: var(--accent-color);"
-                    >H</span
-                >
-                <span style="text-wrap: nowrap;">Home</span>
-            </div>
-            <div>
-                <span style="font-weight: bold; color: var(--accent-color);"
-                    >R</span
-                >
-                <span style="text-wrap: nowrap;">Download Resume</span>
-            </div>
+            {#if !show_tip}
+                <div class="animated_arrow">
+                    <img
+                        class="arrow"
+                        style="width: 100%"
+                        src={animated}
+                        alt=""
+                    />
+                    <span style="text-wrap: nowrap;"
+                        >Use keyboard shortcuts</span
+                    >
+                </div>
+            {/if}
         </div>
     </section>
 </main>
@@ -124,7 +155,20 @@
         transition: all 300ms ease;
         user-select: none;
     }
+    .animated_arrow {
+        width: 8rem;
+        position: absolute;
+        top: 40vh;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        border: none !important;
+        opacity: 1;
+    }
 
+    .arrow {
+        transform: rotate(120deg);
+    }
     .shortcuts:hover {
         opacity: 1;
     }
