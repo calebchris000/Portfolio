@@ -102,7 +102,7 @@
                         src={animated}
                         alt=""
                     />
-                    <span style="text-wrap: nowrap;"
+                    <span style="text-wrap: nowrap; font-size: 1.2vw;"
                         >Use keyboard shortcuts</span
                     >
                 </div>
@@ -156,11 +156,11 @@
         user-select: none;
     }
     .animated_arrow {
-        width: 8rem;
+        width: 10vw;
         position: absolute;
         top: 40vh;
         display: flex;
-        gap: 1rem;
+        gap: 2vw;
         flex-direction: column;
         border: none !important;
         opacity: 1;
