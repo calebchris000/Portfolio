@@ -49,11 +49,11 @@ function createButton(title: string, svg: () => string) {
   return button;
 }
 
-["Home", "Portfolio", "Contact"].forEach((title: string) => {
+["Home", "About Me", "My Works"].forEach((title: string) => {
   const svgs = {
     Home: homeSVG(),
-    Portfolio: portfolioSVG(),
-    Contact: contactSVG(),
+    "About Me": contactSVG(),
+    "My Works": portfolioSVG(),
   };
   menu_parent.appendChild(createButton(title, svgs[title]));
 });

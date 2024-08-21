@@ -3,6 +3,7 @@
     import download from "@src/assets/download.svg";
     import animated from "@src/assets/animated_arrow.gif";
     import Navbar from "./components/navbar.svelte";
+    import { circleToHide, circleToShow } from "./components/hider";
 
     let home: HTMLElement;
     $: show_tip = false;
@@ -25,9 +26,12 @@
     }
 
     onMount(() => {
-        setTimeout(() => {
-            home.style.transform = "scale(1)";
-        });
+        const current = localStorage.getItem("currentPath");
+
+        if (current !== "/home") {
+            circleToShow();
+            localStorage.setItem("currentPath", "/home");
+        }
 
         const tip = localStorage.getItem("showTip");
 
@@ -63,7 +67,10 @@
             >
             <div class="w-full flex flex-col md:flex-row gap-[2vh]" style="">
                 <button
-                    class="button w-full flex justify-between px-[6vh] items-center text-[2.4vh] border p-[3vh]"
+                    on:click={() => {
+                        circleToHide();
+                    }}
+                    class="button relative w-full flex justify-between px-[6vh] items-center text-[2.4vh] border p-[3vh]"
                     type="button"
                 >
                     <span>See My Works!</span>
@@ -71,7 +78,7 @@
                 </button>
                 <button
                     on:click={handleDownloadResume}
-                    class="button w-full flex justify-between px-[6vh] items-center text-[2.4vh] p-[3vh]"
+                    class="button relative w-full flex justify-between px-[6vh] items-center text-[2.4vh] p-[3vh]"
                     type="button"
                 >
                     <figure>Download My Resume</figure>
@@ -130,8 +137,6 @@
         position: relative;
         user-select: none;
         z-index: 10;
-        transform: scale(0);
-        transition: all 500ms cubic-bezier(1, 1.72, 0.78, 0.79);
     }
 
     .content {
@@ -202,7 +207,7 @@
         width: 0;
         mix-blend-mode: difference;
         background-color: var(--secondary-color);
-        /* animation: shrink 0.3s ease-out forwards; */
+        animation: shrink 0.3s ease-out forwards;
     }
 
     @keyframes shrink {
@@ -215,7 +220,7 @@
     }
 
     .text button:hover::before {
-        /* animation: expand 0.3s ease-out forwards; */
+        animation: expand 0.3s ease-out forwards;
         width: 0;
     }
 

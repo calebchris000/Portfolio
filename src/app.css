@@ -192,3 +192,20 @@ a {
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+.hider {
+    background-color: var(--accent-color-1);
+    z-index: 999;
+    position: fixed;
+    inset: 0;
+    clip-path: circle(100% at top left);
+    transition: clip-path 0.5s ease-in-out;
+}
+
+.shower {
+    background-color: var(--accent-color-1);
+    z-index: 999;
+    position: fixed;
+    inset: 0;
+    clip-path: circle(0px at top left);
+    transition: clip-path 0.5s ease-in-out 2s;
+}

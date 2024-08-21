@@ -5,6 +5,7 @@
     import Counter from "./lib/Counter.svelte";
     import Greeting from "./pages/greeting.svelte";
     import Home from "./pages/home.svelte";
+    import { onMount } from "svelte";
 
     export let url = "";
 </script>

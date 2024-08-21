@@ -1,42 +1,37 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { navigate } from "svelte-routing";
+    import { circleToHide } from "./components/hider";
 
     let parent: HTMLElement;
 
     onMount(() => {
+        localStorage.setItem("currentPath", "/");
         setTimeout(() => {
-            const { innerWidth } = window;
-            parent.style.transform = `translateY(-${innerWidth}px)`;
-        }, 4000);
+            // circleToHide();
+        }, 3000);
 
         setTimeout(() => {
-            navigate("/home");
+            // navigate("/home");
         }, 5000);
     });
 </script>
 
-<section bind:this={parent} class="parent">
-    <!-- <div class="splash"></div> -->
-    <span>Hello There!</span>
-    <span class="wave">👋</span>
+<section
+    bind:this={parent}
+    class="parent w-full h-full fixed z-10 transition-all delay-[2s] ease-linear justify-center inset-0 gap-[2vh] text-secondary bg-primary"
+>
+    <div
+        class="z-10 flex items-center justify-center absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] gap-4"
+    >
+        <span class="text-xl lg:text-[15vh] leading-none">Hello There!</span>
+        <span class="wave text-lg xl:text-[10vh]">👋</span>
+    </div>
 </section>
 
 <style>
     .parent {
-        width: 100%;
-        height: 100%;
-        background-color: var(--primary-color);
-        position: fixed;
-        color: var(--secondary-color);
-        z-index: 10;
-        font-family: "Pacifico", cursive;
-        display: flex;
-        transition: all 2s ease;
-        justify-content: center;
-        inset: 0;
-        display: flex;
-        gap: 2rem;
+        font-family: "Poppins", cursive;
     }
 
     .parent::before {
@@ -47,14 +42,14 @@
         background: linear-gradient(
             135deg,
             transparent 0% 20%,
-            var(--accent-color-1) 25% 60%,
-            transparent 65% 100%
+            var(--accent-color-1) 20% 60%,
+            transparent 60% 100%
         );
-        background-size: 1000%;
+        background-size: 1200%;
         transition: all 3s ease;
         background-position: 0% 0%;
         inset: 0;
-        animation: swipe 3s ease-in-out forwards;
+        animation: swipe 2s ease-in-out forwards;
     }
 
     @keyframes swipe {
@@ -72,8 +67,6 @@
     }
 
     .parent span {
-        font-size: 4rem;
-        margin-top: 10rem;
         font-weight: 600;
         user-select: none;
         z-index: 10;
@@ -81,7 +74,6 @@
 
     .wave {
         animation: wave 1.5s ease-in-out infinite;
-        display: inline-block;
         width: fit-content;
         height: fit-content;
         transform-origin: 70% 70%;
