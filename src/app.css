@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     line-height: 1.5;
     cursor: none;
@@ -48,6 +52,14 @@ a {
         background-color,
         color,
         scale 100ms linear;
+}
+
+@media (max-width: 1024px) {
+    .cursor,
+    .tooltip,
+    .menu_parent {
+        display: none !important;
+    }
 }
 
 .cursor_highlight {

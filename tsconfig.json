@@ -8,11 +8,12 @@
     "allowJs": true,
     "checkJs": true,
     "isolatedModules": true,
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+    "paths": {
+      "@src/*": ["./src/*"]
+    }
   },
-  "paths": {
-    "@src/*": ["./src/*"]
-  },
+
   "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
