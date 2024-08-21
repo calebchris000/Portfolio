@@ -8,11 +8,11 @@
     onMount(() => {
         localStorage.setItem("currentPath", "/");
         setTimeout(() => {
-            // circleToHide();
+            circleToHide();
         }, 3000);
 
         setTimeout(() => {
-            // navigate("/home");
+            navigate("/home");
         }, 5000);
     });
 </script>
