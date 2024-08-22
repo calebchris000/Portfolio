@@ -1,8 +1,22 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+
+    let navbar: HTMLElement;
+    $: scrollY = 0;
+
+    onMount(() => {
+        function handleScroll() {
+            scrollY = window.scrollY;
+        }
+
+        window.addEventListener("scroll", handleScroll);
+    });
 </script>
 
 <nav
-    class="sticky flex font-medium md:justify-between text-[1.48vh] left-0 right-0 top-0 text-secondary px-8 xl:px-[7vh] py-[4vh] justify-end"
+    bind:this={navbar}
+    class:bg-accent-1={scrollY > 0}
+    class="sticky z-10 flex transition-all font-medium md:justify-between text-[1.48vh] left-0 right-0 top-0 text-secondary px-8 xl:px-[7vh] py-[4vh] justify-end"
 >
     <div class="md:flex hidden items-center gap-[2vh] text-[2vh]">
         <span class="w-[5vh] h-[5vh] rounded-full bg-secondary"></span>

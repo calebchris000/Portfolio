@@ -22,10 +22,10 @@ window.addEventListener("mousemove", (e) => {
   const target = e.target as HTMLElement;
 
   if (!target) return;
-
   if (target.tagName === "A") {
     cursor.style.borderColor = "yellow";
     cursor.style.background = "yellow";
+
     cursor.style.scale = "1.2";
   } else if (target.tagName === "BUTTON") {
     cursor.style.borderColor = "#ff4500";

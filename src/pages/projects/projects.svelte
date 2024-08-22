@@ -1,16 +1,29 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import animated from "@src/assets/animated_arrow.gif";
+    import fancy_arrow from "@src/assets/arrow.webp";
 
     import { circleToShow } from "../components/hider";
     import Navbar from "../components/navbar.svelte";
+    import Timeline from "./timeline.svelte";
     $: show_tip = false;
+    $: hide_arrow = false;
     onMount(() => {
         const current = localStorage.getItem("currentPath");
+
         if (current !== "/projects") {
             circleToShow();
             localStorage.setItem("currentPath", "/projects");
         }
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                hide_arrow = true;
+            } else {
+                hide_arrow = false;
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+
         const tip = localStorage.getItem("showTip");
 
         if (!tip) {
@@ -27,7 +40,7 @@
     });
 </script>
 
-<main class="fixed text-secondary z-10 left-0 right-0 projects">
+<main class="relative flex flex-col space-y-32 text-secondary z-10 projects">
     <Navbar />
     <section
         style="margin-top: 3.7vh;"
@@ -84,10 +97,27 @@
                 </div>
             {/if}
         </div>
+        <button
+            type="button"
+            on:click={() => {
+                window.scrollTo({
+                    top: window.scrollY + 1000,
+                    behavior: "smooth",
+                });
+            }}
+            class:opacity-0={hide_arrow}
+            class="fixed select-none transition-all bottom-0 left-[50%] w-20 -translate-x-[50%]"
+        >
+            <img class="w-full" src={fancy_arrow} alt="" />
+        </button>
     </section>
+    <Timeline />
 </main>
 
 <style>
+    :root {
+        overflow: auto !important;
+    }
     .projects {
         font-family: "Poppins", sans-serif;
     }
