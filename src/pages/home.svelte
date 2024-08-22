@@ -4,6 +4,7 @@
     import animated from "@src/assets/animated_arrow.gif";
     import Navbar from "./components/navbar.svelte";
     import { circleToHide, circleToShow } from "./components/hider";
+    import { navigate } from "svelte-routing";
 
     let home: HTMLElement;
     $: show_tip = false;
@@ -22,6 +23,13 @@
         const { key } = e;
         if (key.toUpperCase() === "R") {
             handleDownloadResume();
+        } else if (key.toUpperCase() === "W") {
+            circleToHide();
+        } else if (key.toUpperCase() === "M") {
+            circleToHide();
+            setTimeout(() => {
+                navigate("/about");
+            }, 500);
         }
     }
 
@@ -48,7 +56,7 @@
         }, 10000);
     });
 
-    window.addEventListener("keypress", handleKeyPress);
+    // window.addEventListener("keypress", handleKeyPress);
 </script>
 
 <main bind:this={home} class="home">
@@ -95,12 +103,7 @@
                     >
                     <span style="text-wrap: nowrap;">Home</span>
                 </div>
-                <div>
-                    <span style="font-weight: bold; color: var(--accent-color);"
-                        >M</span
-                    >
-                    <span style="text-wrap: nowrap;">About Me</span>
-                </div>
+
                 <div>
                     <span style="font-weight: bold; color: var(--accent-color);"
                         >W</span
