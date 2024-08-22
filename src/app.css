@@ -196,10 +196,14 @@ a {
     background-color: var(--accent-color-1);
     z-index: 999;
     position: fixed;
-    height: 100vw;
     inset: 0;
-    clip-path: circle(100% at top left);
     transition: clip-path 0.5s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+    .hider {
+        height: 100vh;
+    }
 }
 
 .shower {
