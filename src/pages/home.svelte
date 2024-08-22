@@ -78,6 +78,10 @@
                 <button
                     on:click={() => {
                         circleToHide();
+
+                        setTimeout(() => {
+                            navigate("/projects");
+                        }, 500);
                     }}
                     class="button relative w-full flex justify-between px-[6vh] items-center text-[2.4vh] border p-[3vh]"
                     type="button"
