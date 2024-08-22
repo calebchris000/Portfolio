@@ -12,7 +12,7 @@
     function handleDownloadResume() {
         const link = document.createElement("a");
         link.href =
-            "https://raw.githubusercontent.com/calebchris000/Portfolio/main/resume.pdf";
+            "https://raw.githubusercontent.com/calebchris000/Portfolio/main/src/lib/resume.pdf";
         link.download = "Resume - Caleb Nwaizu.pdf";
         document.body.appendChild(link);
         link.click();
