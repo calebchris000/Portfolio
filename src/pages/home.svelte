@@ -12,7 +12,7 @@
     function handleDownloadResume() {
         const link = document.createElement("a");
         link.href =
-            "https://github.com/calebchris000/Portfolio/blob/main/src/lib/resume.pdf";
+            "https://raw.githubusercontent.com/calebchris000/Portfolio/main/resume.pdf";
         link.download = "Resume - Caleb Nwaizu.pdf";
         document.body.appendChild(link);
         link.click();
@@ -95,7 +95,6 @@
                 </button>
             </div>
         </div>
-
         <div class="xl:block hidden" style="position: relative;">
             <div class="shortcuts">
                 <div>
