@@ -1,4 +1,8 @@
 export function circleToShow() {
+  const existingHider = document.querySelector(".hider, .shower");
+  if (existingHider) {
+    document.body.removeChild(existingHider);
+  }
   const hider = document.createElement("div");
   hider.classList.add("hider");
   document.body.appendChild(hider);
@@ -27,6 +31,10 @@ export function circleToShow() {
 }
 
 export function circleToHide() {
+  const existingHider = document.querySelector(".hider, .shower");
+  if (existingHider) {
+    document.body.removeChild(existingHider);
+  }
   const hider = document.createElement("div");
   hider.classList.add("hider");
   document.body.appendChild(hider);

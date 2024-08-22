@@ -49,7 +49,7 @@ function createButton(title: string, svg: () => string) {
   return button;
 }
 
-["Home", "About Me", "My Works"].forEach((title: string) => {
+["Home", "My Works"].forEach((title: string) => {
   const svgs = {
     Home: homeSVG(),
     "About Me": contactSVG(),

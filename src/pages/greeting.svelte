@@ -9,11 +9,11 @@
         localStorage.setItem("currentPath", "/");
         setTimeout(() => {
             circleToHide();
-        }, 3000);
+        }, 2000);
 
         setTimeout(() => {
             navigate("/home");
-        }, 5000);
+        }, 3000);
     });
 </script>
 
