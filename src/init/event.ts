@@ -2,7 +2,8 @@ import { circleToHide } from "@src/pages/components/hider";
 
 function handleDownloadResume() {
   const link = document.createElement("a");
-  link.href = "./src/lib/resume.pdf";
+  link.href =
+    "https://github.com/calebchris000/Portfolio/blob/main/src/lib/resume.pdf";
   link.download = "Resume - Caleb Nwaizu.pdf";
   document.body.appendChild(link);
   link.click();
