@@ -95,7 +95,6 @@
                 </button>
             </div>
         </div>
-
         <div class="xl:block hidden" style="position: relative;">
             <div class="shortcuts">
                 <div>
