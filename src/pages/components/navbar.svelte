@@ -1,8 +1,19 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import profile from "@src/assets/image.png";
+    import { circleToHide } from "./hider";
+    import { navigate } from "svelte-routing";
 
     let navbar: HTMLElement;
     $: scrollY = 0;
+
+    function handleRoute(route: string) {
+        circleToHide();
+
+        setTimeout(() => {
+            navigate(route);
+        }, 500);
+    }
 
     onMount(() => {
         function handleScroll() {
@@ -19,13 +30,15 @@
     class="sticky z-10 flex transition-all font-medium md:justify-between text-[1.48vh] left-0 right-0 top-0 text-secondary px-8 xl:px-[7vh] py-[4vh] justify-end"
 >
     <div class="md:flex hidden items-center gap-[2vh] text-[2vh]">
-        <span class="w-[5vh] h-[5vh] rounded-full bg-secondary"></span>
+        <div class="w-[5vh] h-[5vh] rounded-full">
+            <img src={profile} alt="" />
+        </div>
         <span>Caleb Nwaizu</span>
     </div>
     <div class="text-[2vh] gap-[4vh] hidden md:flex items-center">
-        <span><a href="#home">Home</a></span>
-        <span><a href="#about">About Me</a></span>
-        <span><a href="#projects">Projects</a></span>
+        <button on:click={() => handleRoute("/home")}>Home</button>
+        <button on:click={() => handleRoute("/about")}>About Me</button>
+        <button on:click={() => handleRoute("/projects")}>Projects</button>
     </div>
 
     <button class="text-2xl md:hidden justify-self-end" type="button">
