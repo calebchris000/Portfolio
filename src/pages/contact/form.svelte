@@ -16,6 +16,8 @@
             status = "failure";
         } else {
             status = "success";
+            email = "";
+            message = "";
         }
     }
 
