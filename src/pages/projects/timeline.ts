@@ -24,7 +24,7 @@ export const createTimeline = (element: string, contents: ContentType[]) => {
     node.classList.add("node_parent");
     const child = document.createElement("div");
     child.classList.add("node_child");
-    if (i % 2 !== 0) {
+    if (i % 2 !== 0 && window.innerWidth >= 768) {
       child.classList.add("node_child_reverse");
     }
     node.appendChild(child);
@@ -65,11 +65,14 @@ export const createTimeline = (element: string, contents: ContentType[]) => {
 
     const bounding = child.getBoundingClientRect();
     heightAggregation += bounding.height + 100;
-    if (i > 0) {
-      node.style.top = `${heightAggregation}px`;
+
+    if (i === 0) {
+      node.style.top = `0px`;
+    } else {
+      node.style.top = `${heightAggregation - 600}px`;
     }
   }
-  stalk.style.height = `${heightAggregation + 300}px`;
+  stalk.style.height = `${heightAggregation - 100}px`;
   console.log(heightAggregation);
 };
 

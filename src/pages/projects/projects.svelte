@@ -111,7 +111,7 @@
             <img class="w-full" src={fancy_arrow} alt="" />
         </button>
     </section>
-    <div class="hidden xl:block">
+    <div class="">
         <Timeline />
     </div>
 </main>
