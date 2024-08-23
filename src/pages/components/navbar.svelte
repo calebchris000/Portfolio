@@ -3,9 +3,11 @@
     import profile from "@src/assets/image.png";
     import { circleToHide } from "./hider";
     import { navigate } from "svelte-routing";
+    import { derived } from "svelte/store";
 
     let navbar: HTMLElement;
     $: scrollY = 0;
+    $: open_modal = false;
 
     function handleRoute(route: string) {
         circleToHide();
@@ -41,13 +43,59 @@
         <button on:click={() => handleRoute("/projects")}>Projects</button>
     </div>
 
-    <button class="text-2xl md:hidden justify-self-end" type="button">
+    <button
+        on:click={() => {
+            open_modal = true;
+        }}
+        class="text-2xl md:hidden justify-self-end"
+        type="button"
+    >
         <i class="fa-solid fa-bars"></i>
     </button>
+    <div
+        class:opacity-100={open_modal}
+        class:pointer-events-auto={open_modal}
+        class="modal opacity-0 transition-all pointer-events-none w-screen text-[3rem] pt-2 px-4 z-10 h-screen bg-accent-2"
+    >
+        <button
+            on:click={() => {
+                open_modal = false;
+            }}
+            type="button"
+            class="flex justify-end p-4 w-full"
+        >
+            <i class="fa fa-x text-3xl"></i>
+        </button>
+        <div class="flex p-4 font-semibold flex-col gap-8">
+            <a
+                on:click={() => {
+                    open_modal = false;
+                }}
+                href="/home">Home</a
+            >
+            <a
+                on:click={() => {
+                    open_modal = false;
+                }}
+                href="/projects">Projects</a
+            >
+            <a
+                on:click={() => {
+                    open_modal = false;
+                }}
+                href="/contact">Contact</a
+            >
+        </div>
+    </div>
 </nav>
 
 <style>
     nav {
         font-family: "Poppins", sans-serif;
+    }
+
+    .modal {
+        position: fixed;
+        inset: 0;
     }
 </style>
