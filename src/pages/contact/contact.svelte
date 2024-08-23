@@ -8,7 +8,9 @@
 <main class="relative z-10 home">
     <Navbar />
 
-    <section class="content px-8 xl:px-[7vh] text-secondary">
+    <section
+        class="content gap-10 pb-10 xl:pb-0 xl:gap-[30vw] flex xl:flex-row flex-col px-8 xl:px-[7vh] text-secondary"
+    >
         <div class="flex flex-col gap-4 text-lg">
             <span
                 class="greet text-wrap text-4xl uppercase xl:text-[12.26vh] font-semibold leading-tight"
@@ -20,7 +22,7 @@
 
             <Form />
         </div>
-        <div class="border h-fit border-accent-2 w-56">
+        <div class="border h-fit border-accent-2 w-full xl:w-56">
             <button
                 on:click={() => handleContact("twitter")}
                 class="bg-accent-1 border-b border-accent-2 transition-all contact text-secondary font-medium p-4 ps-4 w-full flex justify-start items-center gap-4"
@@ -62,7 +64,6 @@
         color: var(--secondary-color);
         display: flex;
         justify-content: space-between;
-        gap: 30vw;
     }
 
     .content:hover {
