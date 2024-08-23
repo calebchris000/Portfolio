@@ -1,11 +1,30 @@
 <script lang="ts">
-    let email: string = "";
-    let password: string = "";
+    import axios from "axios";
 
-    function handleSubmit() {
-        // Handle form submission
-        console.log("Email:", email);
-        console.log("Password:", password);
+    let email: string = "";
+    let message: string = "";
+    $: status = "inactive" as "inactive" | "pending" | "success" | "failure";
+
+    async function handleSubmit() {
+        status = "pending";
+        const baseurl = import.meta.env.VITE_BACKEND_URL;
+        const response = await axios.post(`${baseurl}/sendEmail`, {
+            email,
+            message,
+        });
+        if (response.status !== 200) {
+            status = "failure";
+        } else {
+            status = "success";
+        }
+    }
+
+    $: {
+        if (status !== "pending") {
+            setTimeout(() => {
+                status = "inactive";
+            }, 2000);
+        }
     }
 </script>
 
@@ -22,12 +41,24 @@
         placeholder="Type your message here :)"
         class="w-full text-primary placeholder:text-primary outline-none bg-accent-3 p-4 resize-none h-[30vh]"
         name=""
+        bind:value={message}
         id=""
     ></textarea>
     <button
         class="bg-secondary relative submit text-primary p-4 font-medium"
-        type="submit">Submit</button
+        type="submit"
+        disabled={status === "pending"}
     >
+        {#if status === "pending"}
+            Sending...
+        {:else if status === "success"}
+            Sent!
+        {:else if status === "failure"}
+            Failed. Try Again?
+        {:else}
+            Submit
+        {/if}
+    </button>
 </form>
 
 <style>
