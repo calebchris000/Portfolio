@@ -6,8 +6,17 @@
     import { derived } from "svelte/store";
 
     let navbar: HTMLElement;
+    let modal: HTMLDivElement;
     $: scrollY = 0;
     $: open_modal = false;
+
+    $: {
+        if (modal && open_modal) {
+            modal.style.transform = `translateY(0)`;
+        } else if (modal) {
+            modal.style.transform = `translateY(-${window.innerHeight}px)`;
+        }
+    }
 
     function handleRoute(route: string) {
         circleToHide();
@@ -18,6 +27,7 @@
     }
 
     onMount(() => {
+        // modal.style.transform = `translateY(-${window.innerHeight}px)`;
         function handleScroll() {
             scrollY = window.scrollY;
         }
@@ -53,9 +63,9 @@
         <i class="fa-solid fa-bars"></i>
     </button>
     <div
-        class:opacity-100={open_modal}
+        bind:this={modal}
         class:pointer-events-auto={open_modal}
-        class="modal opacity-0 transition-all pointer-events-none w-screen text-[3rem] pt-2 px-4 z-10 h-screen bg-accent-2"
+        class="modal pointer-events-none w-screen text-[3rem] pt-2 px-4 z-10 h-screen bg-accent-1"
     >
         <button
             on:click={() => {
@@ -97,5 +107,6 @@
     .modal {
         position: fixed;
         inset: 0;
+        transition: all 1s ease;
     }
 </style>
