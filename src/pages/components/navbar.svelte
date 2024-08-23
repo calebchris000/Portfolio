@@ -37,7 +37,7 @@
     </div>
     <div class="text-[2vh] gap-[4vh] hidden md:flex items-center">
         <button on:click={() => handleRoute("/home")}>Home</button>
-        <button on:click={() => handleRoute("/about")}>About Me</button>
+        <button on:click={() => handleRoute("/contact")}>Contact</button>
         <button on:click={() => handleRoute("/projects")}>Projects</button>
     </div>
 
