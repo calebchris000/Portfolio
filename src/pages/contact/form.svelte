@@ -30,9 +30,9 @@
     }
 </script>
 
-<form class="flex flex-col gap-4" on:submit|preventDefault={handleSubmit}>
+<form class="flex flex-col gap-[2vh]" on:submit|preventDefault={handleSubmit}>
     <input
-        class="w-full p-4 text-primary placeholder:text-primary outline-none px-4 bg-accent-3"
+        class="w-full p-[3vh] text-[3vh] text-primary placeholder:text-primary outline-none px-[3vh] bg-accent-3"
         placeholder="Email Address"
         type="email"
         id="email"
@@ -41,13 +41,13 @@
     />
     <textarea
         placeholder="Type your message here :)"
-        class="w-full text-primary placeholder:text-primary outline-none bg-accent-3 p-4 resize-none h-[30vh]"
+        class="w-full text-primary placeholder:text-primary outline-none bg-accent-3 text-[3vh] p-[3vh] resize-none h-[30vh]"
         name=""
         bind:value={message}
         id=""
     ></textarea>
     <button
-        class="bg-secondary relative submit text-primary p-4 font-medium"
+        class="bg-secondary relative text-[3vh] submit text-primary p-[3vh] font-medium"
         type="submit"
         disabled={status === "pending"}
     >

@@ -1,6 +1,8 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import Navbar from "../components/navbar.svelte";
     import Form from "./form.svelte";
+    import { circleToShow } from "../components/hider";
 
     function handleContact(medium: string) {
         switch (medium) {
@@ -20,53 +22,64 @@
                 console.log("Invalid medium");
         }
     }
+
+    onMount(() => {
+        const current = localStorage.getItem("currentPath");
+
+        if (current !== "/contact") {
+            circleToShow();
+            localStorage.setItem("currentPath", "/contact");
+        }
+    });
 </script>
 
 <main class="relative z-10 home">
     <Navbar />
 
     <section
-        class="content gap-10 pb-10 xl:pb-0 xl:gap-[30vw] flex xl:flex-row flex-col px-8 xl:px-[7vh] text-secondary"
+        class="content gap-[4vh] pb-10 xl:pb-0 xl:gap-[30vw] flex xl:flex-row flex-col px-8 xl:px-[7vh] text-secondary"
     >
-        <div class="flex flex-col gap-4 text-lg">
+        <div class="flex flex-col gap-[3vh] text-lg">
             <span
                 class="greet text-wrap text-4xl uppercase xl:text-[12.26vh] font-semibold leading-tight"
                 >CONTACT ME</span
             >
-            <span class="uppercase"
+            <span class="uppercase text-[3vh]"
                 >Get in touch via email by completing the form below.</span
             >
 
             <Form />
         </div>
-        <div class="border h-fit border-accent-2 w-full xl:w-56">
+        <div
+            class="border h-[40vh] flex flex-col border-accent-2 w-full xl:w-[16vw]"
+        >
             <button
                 on:click={() => handleContact("twitter")}
-                class="bg-accent-1 border-b border-accent-2 transition-all contact text-secondary font-medium p-4 ps-4 w-full flex justify-start items-center gap-4"
+                class="bg-accent-1 h-full border-b border-accent-2 transition-all contact text-secondary font-medium ps-[3vh] w-full flex justify-start items-center gap-4"
             >
-                <i class="fab fa-twitter"></i>
-                <span>Twitter </span>
+                <i class="text-[2.5vh] fab fa-twitter"></i>
+                <span class="text-[2.1vh]">Twitter </span>
             </button>
             <button
                 on:click={() => handleContact("whatsapp")}
-                class="bg-accent-1 border-b border-accent-2 transition-all contact text-secondary font-medium p-4 ps-4 w-full flex justify-start items-center gap-4"
+                class="bg-accent-1 h-full border-b border-accent-2 transition-all contact text-secondary font-medium ps-[3vh] w-full flex justify-start items-center gap-4"
             >
-                <i class="fab fa-whatsapp"></i>
-                <span>WhatsApp </span>
+                <i class="text-[2.5vh] fab fa-whatsapp"></i>
+                <span class="text-[2.1vh]">WhatsApp </span>
             </button>
             <button
                 on:click={() => handleContact("phone")}
-                class="bg-accent-1 border-b border-accent-2 transition-all contact text-secondary font-medium p-4 ps-4 w-full flex justify-start items-center gap-4"
+                class="bg-accent-1 h-full border-b border-accent-2 transition-all contact text-secondary font-medium ps-[3vh] w-full flex justify-start items-center gap-4"
             >
-                <i class="fas fa-phone"></i>
-                <span>Phone </span>
+                <i class="text-[2.5vh] fas fa-phone"></i>
+                <span class="text-[2.1vh]">Phone </span>
             </button>
             <button
                 on:click={() => handleContact("telegram")}
-                class="bg-accent-1 border-accent-2 transition-all contact text-secondary font-medium p-4 ps-4 w-full flex justify-start items-center gap-4"
+                class="bg-accent-1 h-full border-accent-2 transition-all contact text-secondary font-medium ps-[3vh] w-full flex justify-start items-center gap-4"
             >
-                <i class="fab fa-telegram"></i>
-                <span>Telegram </span>
+                <i class="text-[2.5vh] fab fa-telegram"></i>
+                <span class="text-[2.1vh]">Telegram </span>
             </button>
         </div>
     </section>

@@ -11,7 +11,7 @@
         circleToHide();
 
         setTimeout(() => {
-            navigate(route);
+            window.location.href = route;
         }, 500);
     }
 
