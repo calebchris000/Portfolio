@@ -114,6 +114,12 @@
                     >
                     <span style="text-wrap: nowrap;">My Works</span>
                 </div>
+                <div>
+                    <span style="font-weight: bold; color: var(--accent-color);"
+                        >C</span
+                    >
+                    <span style="text-wrap: nowrap;">Contact Me</span>
+                </div>
 
                 <div>
                     <span style="font-weight: bold; color: var(--accent-color);"
