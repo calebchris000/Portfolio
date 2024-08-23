@@ -2,7 +2,24 @@
     import Navbar from "../components/navbar.svelte";
     import Form from "./form.svelte";
 
-    function handleContact(medium: string) {}
+    function handleContact(medium: string) {
+        switch (medium) {
+            case "twitter":
+                window.open("https://twitter.com/calebchris000", "_blank");
+                break;
+            case "whatsapp":
+                window.open("https://wa.me/+2348130078112", "_blank");
+                break;
+            case "phone":
+                window.open("tel:+2347039820933", "_blank");
+                break;
+            case "telegram":
+                window.open("https://t.me/calebchris000", "_blank");
+                break;
+            default:
+                console.log("Invalid medium");
+        }
+    }
 </script>
 
 <main class="relative z-10 home">
