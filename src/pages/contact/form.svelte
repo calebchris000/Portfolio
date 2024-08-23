@@ -7,7 +7,7 @@
 
     async function handleSubmit() {
         status = "pending";
-        const baseurl = import.meta.env.VITE_BACKEND_URL;
+        const baseurl = "https://portfolio-xetf.onrender.com";
         const response = await axios.post(`${baseurl}/sendEmail`, {
             email,
             message,
