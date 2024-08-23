@@ -44,15 +44,15 @@
     <Navbar />
     <section
         style="margin-top: 3.7vh;"
-        class="px-[7vh] flex justify-between items-start gap-32"
+        class="xl:px-[7vh] px-4 flex justify-between items-start gap-32"
     >
-        <div class="w-full max-w-[60vw] flex flex-col gap-[4vh]">
+        <div class="w-full xl:max-w-[60vw] flex flex-col gap-[4vh]">
             <span
-                class="uppercase leading-tight text-[12.26vh] font-semibold text-secondary"
+                class="uppercase leading-tight text-4xl xl:text-[12.26vh] font-semibold text-secondary"
                 >MY PROJECTS TIMELINE</span
             >
             <span
-                class="eading-loose xl:max-w-[50vw] xl:text-[3.5vh] xl:uppercase xl:leading-[7vh] my-[3.7vh]"
+                class="leading-loose xl:max-w-[50vw] xl:text-[3.5vh] xl:uppercase xl:leading-[7vh] my-[3.7vh]"
             >
                 Explore my project journey through the years. This timeline
                 showcases my work in reverse chronological order, with the most
@@ -111,7 +111,9 @@
             <img class="w-full" src={fancy_arrow} alt="" />
         </button>
     </section>
-    <Timeline />
+    <div class="">
+        <Timeline />
+    </div>
 </main>
 
 <style>
