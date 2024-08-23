@@ -12,6 +12,7 @@ function handleDownloadResume() {
 
 function handleKeyPress(e: KeyboardEvent) {
   e.preventDefault();
+
   const { key } = e;
   if (key.toUpperCase() === "R") {
     handleDownloadResume();
@@ -28,7 +29,14 @@ function handleKeyPress(e: KeyboardEvent) {
     setTimeout(() => {
       window.location.href = "/projects";
     }, 500);
+  } else if (key.toUpperCase() === "C") {
+    circleToHide();
+    setTimeout(() => {
+      window.location.href = "/contact";
+    }, 500);
   }
 }
 
-window.addEventListener("keypress", handleKeyPress);
+if (window.location.pathname !== "/contact") {
+  window.addEventListener("keypress", handleKeyPress);
+}
