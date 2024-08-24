@@ -19,7 +19,7 @@
 }
 
 .node_child {
-    width: 23rem;
+    width: clamp(23rem, 23rem, 30rem);
     /* background-color: var(--accent-color-3); */
     position: absolute;
     color: var(--secondary-color);
