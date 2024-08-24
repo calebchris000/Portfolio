@@ -15,7 +15,7 @@
             if (open_modal) {
                 modal.style.transform = `translateY(0)`;
             } else {
-                modal.style.transform = `translateY(-${window.innerHeight}px)`;
+                modal.style.transform = `translateY(-${window.innerHeight + 100}px)`;
             }
         }
     }
