@@ -11,10 +11,12 @@
     $: open_modal = false;
 
     $: {
-        if (modal && open_modal) {
-            modal.style.transform = `translateY(0)`;
-        } else if (modal) {
-            modal.style.transform = `translateY(-${window.innerHeight}px)`;
+        if (modal) {
+            if (open_modal) {
+                modal.style.transform = `translateY(0)`;
+            } else {
+                modal.style.transform = `translateY(-${window.innerHeight}px)`;
+            }
         }
     }
 
@@ -27,7 +29,9 @@
     }
 
     onMount(() => {
-        // modal.style.transform = `translateY(-${window.innerHeight}px)`;
+        modal.style.transform = `translateY(-${window.innerHeight}px)`;
+        modal.style.display = "block";
+
         function handleScroll() {
             scrollY = window.scrollY;
         }
@@ -65,7 +69,7 @@
     <div
         bind:this={modal}
         class:pointer-events-auto={open_modal}
-        class="modal pointer-events-none w-screen text-[3rem] pt-2 px-4 z-10 h-screen bg-accent-1"
+        class="modal hidden pointer-events-none w-screen text-[3rem] pt-2 px-4 z-10 h-screen bg-accent-1"
     >
         <button
             on:click={() => {
@@ -79,7 +83,7 @@
         <div class="flex p-4 font-semibold flex-col gap-8">
             <a
                 on:click={() => {
-                    open_modal = false;
+                    // open_modal = false;
                 }}
                 href="/home">Home</a
             >
