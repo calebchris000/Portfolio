@@ -29,7 +29,7 @@
     }
 
     onMount(() => {
-        modal.style.transform = `translateY(-${window.innerHeight}px)`;
+        modal.style.transform = `translateY(-${window.innerHeight + 100}px)`;
         modal.style.display = "block";
 
         function handleScroll() {
