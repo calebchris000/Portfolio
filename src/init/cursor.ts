@@ -39,7 +39,7 @@ window.addEventListener("mousemove", (e) => {
     cursor.style.borderColor = "#ffc107";
     cursor.style.background = "#ffc107";
     cursor.style.scale = "1.2";
-  } else if (target.classList.contains("interactive")) {
+  } else if (target.classList?.contains("interactive")) {
     cursor.style.borderColor = "#dc3545";
     cursor.style.scale = "1.2";
   } else {
