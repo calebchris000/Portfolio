@@ -15,28 +15,28 @@
             {
                 title: "May 2024 - Naija Companies",
                 description:
-                    "Decide your next company. Research and compare options, read employee reviews, and write a list of pros and cons for each potential employer.",
+                    "Decide your next company. Research and compare options, read employee reviews, and write a list of pros and cons for each potential employer. \n\n Built With Svelte, TypeScript, NodeJS and PostgreSQL",
                 image: "https://example.com/images/ecommerce-website.jpg",
                 liveLink: "https://naija-companies-frontend.onrender.com/",
             },
             {
                 title: "December 2023 - Pomodoro Timer App",
                 description:
-                    "Track your valuable time with Pomodro Timer. Set custom time that fits.",
+                    "Track your valuable time with Pomodro Timer. Set custom time that fits. \n\nBuilt with React with Redux.",
                 image: "https://example.com/images/task-management-app.jpg",
                 liveLink: "https://pomodoro-software.netlify.app/",
             },
             {
                 title: "May 2023 - COVID 19 Reports",
                 description:
-                    "Get the latest statistics on the COVID 19 cases worldwide.",
+                    "Get the latest statistics on the COVID 19 cases worldwide. \n\n Built with React with Redux.",
                 image: "https://example.com/images/weather-forecast-api.jpg",
                 liveLink: "https://covid19-reports.netlify.app/",
             },
             {
                 title: "April 2023 -  Bookstore Redefined",
                 description:
-                    "Create a book collection and share them online to your friends and family.",
+                    "Create a book collection and share them online to your friends and family.\n\n Built with React.",
                 image: "https://example.com/images/weather-forecast-api.jpg",
                 liveLink: "https://bookstore-redefined.vercel.app/",
             },

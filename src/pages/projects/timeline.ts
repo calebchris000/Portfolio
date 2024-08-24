@@ -48,7 +48,7 @@ export const createTimeline = (element: string, contents: ContentType[]) => {
     title.classList.add("node_title");
     description.classList.add("node_description");
     title.textContent = content.title;
-    description.textContent = content.description;
+    description.innerText = content.description;
 
     live.onclick = () => {
       window.open(content.liveLink, "_blank");
@@ -63,17 +63,18 @@ export const createTimeline = (element: string, contents: ContentType[]) => {
     action.appendChild(imageView);
     child.appendChild(action);
 
-    const bounding = child.getBoundingClientRect();
-    heightAggregation += bounding.height + 100;
+    heightAggregation += child.offsetHeight + 200;
+    console.log("each", child.offsetHeight);
 
     if (i === 0) {
-      node.style.top = `0px`;
-    } else {
-      node.style.top = `${heightAggregation - 600}px`;
+      node.style.top = "0";
+      heightAggregation -= child.offsetHeight + 200;
+      continue;
     }
+    node.style.top = `${heightAggregation}px`;
   }
-  stalk.style.height = `${heightAggregation - 100}px`;
-  console.log(heightAggregation);
+  stalk.style.height = `${heightAggregation + 600}px`;
+  // console.log(heightAggregation);
 };
 
 const showOnIntersection = (element: HTMLElement) => {
