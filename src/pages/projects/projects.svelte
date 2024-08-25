@@ -40,7 +40,9 @@
     });
 </script>
 
-<main class="relative flex flex-col space-y-32 text-secondary z-10 projects">
+<main
+    class="relative overflow-hidden flex flex-col space-y-32 text-secondary z-10 projects"
+>
     <Navbar />
     <section
         style="margin-top: 3.7vh;"
