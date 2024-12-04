@@ -64,7 +64,6 @@ export const createTimeline = (element: string, contents: ContentType[]) => {
     child.appendChild(action);
 
     heightAggregation += child.offsetHeight + 200;
-    console.log("each", child.offsetHeight);
 
     if (i === 0) {
       node.style.top = "0";
@@ -74,7 +73,6 @@ export const createTimeline = (element: string, contents: ContentType[]) => {
     node.style.top = `${heightAggregation}px`;
   }
   stalk.style.height = `${heightAggregation + 600}px`;
-  // console.log(heightAggregation);
 };
 
 const showOnIntersection = (element: HTMLElement) => {

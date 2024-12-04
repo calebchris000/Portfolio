@@ -6,6 +6,13 @@
     onMount(() => {
         createTimeline(".timeline_parent", [
             {
+                title: "December 2024 - Cats Gallery",
+                description:
+                    "A must have photo gallery that allows users to view cats, upload their own pictures, and react with emotions. \n\nTechnologies include Svelte, TailwindCSS, NodeJS, TypeScript, Express and MongoDB.",
+                image: "https://example.com/images/portfolio-website.jpg",
+                liveLink: "https://cats-gallery-cues.onrender.com",
+            },
+            {
                 title: "August 2024 - Portfolio Website",
                 description:
                     "Designed and implemented a personal portfolio website using Svelte and Tailwind CSS",
