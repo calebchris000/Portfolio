@@ -24,7 +24,7 @@
                 description:
                     "Decide your next company. Research and compare options, read employee reviews, and write a list of pros and cons for each potential employer. \n\n Built With Svelte, TypeScript, NodeJS and PostgreSQL",
                 image: "https://example.com/images/ecommerce-website.jpg",
-                liveLink: "https://naija-companies-frontend.onrender.com/",
+                liveLink: "https://naija-companies.vercel.app/",
             },
             {
                 title: "December 2023 - Pomodoro Timer App",
