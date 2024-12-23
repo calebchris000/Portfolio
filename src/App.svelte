@@ -8,10 +8,12 @@
     import About from "./pages/about.svelte";
     import Projects from "./pages/projects/projects.svelte";
     import Contact from "./pages/contact/contact.svelte";
+    import Imagemodal from "./pages/components/image-modal/imagemodal.svelte";
 
     export let url = "";
 </script>
 
+<Imagemodal />
 <Router {url}>
     <main>
         <Route path="/" component={Greeting} />

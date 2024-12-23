@@ -1,3 +1,5 @@
+import { store } from "@src/lib/store";
+
 type ContentType = {
   title: string;
   description: string;
@@ -52,6 +54,13 @@ export const createTimeline = (element: string, contents: ContentType[]) => {
 
     live.onclick = () => {
       window.open(content.liveLink, "_blank");
+    };
+
+    imageView.onclick = () => {
+      store.set({
+        showImageModal: true,
+        imageModalUrl: content.image,
+      });
     };
 
     child.appendChild(title);

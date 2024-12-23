@@ -1,6 +1,10 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import "./style.css";
+    import naija from "../../assets/screenshot/naijacompanies.png";
+    import cats from "../../assets/screenshot/cats.png";
+    import pomodoro from "../../assets/screenshot/pomodoro.png";
+    import covid from "../../assets/screenshot/covid.png";
     import { createTimeline } from "./timeline";
 
     onMount(() => {
@@ -9,7 +13,7 @@
                 title: "December 2024 - Cats Gallery",
                 description:
                     "A must have photo gallery that allows users to view cats, upload their own pictures, and react with emotions. \n\nTechnologies include Svelte, TailwindCSS, NodeJS, TypeScript, Express and MongoDB.",
-                image: "https://example.com/images/portfolio-website.jpg",
+                image: cats,
                 liveLink: "https://cats-gallery-cues.onrender.com",
             },
             {
@@ -23,21 +27,21 @@
                 title: "May 2024 - Naija Companies",
                 description:
                     "Decide your next company. Research and compare options, read employee reviews, and write a list of pros and cons for each potential employer. \n\n Built With Svelte, TypeScript, NodeJS and PostgreSQL",
-                image: "https://example.com/images/ecommerce-website.jpg",
+                image: naija,
                 liveLink: "https://naija-companies.vercel.app/",
             },
             {
                 title: "December 2023 - Pomodoro Timer App",
                 description:
                     "Track your valuable time with Pomodro Timer. Set custom time that fits. \n\nBuilt with React with Redux.",
-                image: "https://example.com/images/task-management-app.jpg",
+                image: pomodoro,
                 liveLink: "https://pomodoro-software.netlify.app/",
             },
             {
                 title: "May 2023 - COVID 19 Reports",
                 description:
                     "Get the latest statistics on the COVID 19 cases worldwide. \n\n Built with React with Redux.",
-                image: "https://example.com/images/weather-forecast-api.jpg",
+                image: covid,
                 liveLink: "https://covid19-reports.netlify.app/",
             },
             {
